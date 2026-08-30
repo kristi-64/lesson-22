@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>პროდუქტების მართვა</title>
+    <title>ტექნიკის მართვა</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <div class="app-layout">
+      <!-- ფორმის სექცია -->
       <section class="card-section">
         <form id="add-form">
-          <h2 id="form-title">ახალი პროდუქტის დამატება</h2>
+          <h2 id="form-title">ახალი მოწყობილობის დამატება</h2>
 
           <div class="form-group">
-            <label for="title">სათაური</label>
+            <label for="title">დასახელება</label>
             <input
               type="text"
               id="title"
-              placeholder="მაგ: iPhone 15 Pro"
+              placeholder="მაგ: Macbook Pro M3"
               required
             />
           </div>
@@ -29,24 +30,24 @@
               type="number"
               id="price"
               step="0.01"
-              placeholder="999"
+              placeholder="1299"
               required
             />
           </div>
 
           <div class="form-group">
             <label for="discount">ფასდაკლება (%)</label>
-            <input type="number" id="discount" step="0.1" placeholder="10" />
+            <input type="number" id="discount" step="0.1" placeholder="15" />
           </div>
 
           <div class="form-group">
             <label for="category">კატეგორია</label>
             <select id="category" required>
               <option value="">აირჩიეთ კატეგორია</option>
-              <option value="smartphones">Smartphones</option>
               <option value="laptops">Laptops</option>
-              <option value="fragrances">Fragrances</option>
-              <option value="groceries">Groceries</option>
+              <option value="smartphones">Smartphones</option>
+              <option value="tablets">Tablets</option>
+              <option value="accessories">Accessories</option>
             </select>
           </div>
 
@@ -55,19 +56,19 @@
             <input
               type="url"
               id="image"
-              placeholder="https://example.com/image.jpg"
+              placeholder="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
               required
             />
           </div>
 
           <button type="submit" id="submit-btn" class="btn btn-primary">
-            პროდუქტის დამატება
+            მოწყობილობის დამატება
           </button>
         </form>
       </section>
 
       <section class="card-section">
-        <h2>პროდუქტების სია</h2>
+        <h2>ტექნიკის სია</h2>
         <ul class="products-list"></ul>
       </section>
     </div>

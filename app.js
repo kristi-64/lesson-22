@@ -49,7 +49,9 @@ function buildProductCard(product) {
 
 async function loadProducts() {
   try {
-    const res = await fetch("https://dummyjson.com/products?limit=5");
+    const res = await fetch(
+      "https://dummyjson.com/products/category/laptops?limit=5",
+    );
     if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
     const data = await res.json();
@@ -59,7 +61,7 @@ async function loadProducts() {
       listContainer.appendChild(buildProductCard(prod));
     });
   } catch (err) {
-    console.error("პროდუქტების ჩატვირთვა ვერ მოხერხდა:", err);
+    console.error("მოწყობილობების ჩატვირთვა ვერ მოხერხდა:", err);
   }
 }
 
@@ -91,7 +93,7 @@ async function handleEditClick(id) {
     inputImage.value = product.thumbnail;
 
     activeEditId = id;
-    formTitleHeader.textContent = "პროდუქტის რედაქტირება";
+    formTitleHeader.textContent = "მოწყობილობის რედაქტირება";
     submitBtn.textContent = "განახლება";
   } catch (err) {
     console.error(err.message);
@@ -142,8 +144,8 @@ async function editProduct(id, payload) {
 function resetFormState() {
   productForm.reset();
   activeEditId = null;
-  formTitleHeader.textContent = "ახალი პროდუქტის დამატება";
-  submitBtn.textContent = "პროდუქტის დამატება";
+  formTitleHeader.textContent = "ახალი მოწყობილობის დამატება";
+  submitBtn.textContent = "მოწყობილობის დამატება";
 }
 
 productForm.addEventListener("submit", (e) => {
